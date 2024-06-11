@@ -1,5 +1,5 @@
 from langchain import prompts, chains
-import llm.gemini
+from llm import gemini
 import argparse
 
 if __name__ == "__main__":
@@ -9,7 +9,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Init Model
-    model = llm.gemini.model
+    model = gemini.model
 
     # Create Prompts
     code_prompt = prompts.PromptTemplate(
