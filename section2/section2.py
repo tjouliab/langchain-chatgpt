@@ -2,6 +2,7 @@ from langchain import prompts, chains
 from llm import gemini
 import argparse
 
+# LLM and LangChain integration
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--task', default='return a list of numbers')
