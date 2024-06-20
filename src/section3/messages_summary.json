@@ -20,7 +20,7 @@
   {
     "type": "human",
     "data": {
-      "content": "What is the result if I add 3 ?",
+      "content": "What if I add 3 ?",
       "additional_kwargs": {},
       "type": "human",
       "example": false
@@ -29,7 +29,7 @@
   {
     "type": "ai",
     "data": {
-      "content": "If you add 3 to the result of 1 + 1 (which is 2), you get:\n\n2 + 3 = 5 \n",
+      "content": "If you add 3 to the result of 1 + 1 (which is 2), you get 2 + 3 = 5. \n",
       "additional_kwargs": {},
       "type": "ai",
       "example": false
@@ -38,7 +38,7 @@
   {
     "type": "human",
     "data": {
-      "content": "What if I multiply the result by 2 ?",
+      "content": "Add 5 more",
       "additional_kwargs": {},
       "type": "human",
       "example": false
@@ -47,7 +47,7 @@
   {
     "type": "ai",
     "data": {
-      "content": "If you multiply the result of 1 + 1 (which is 2) by 2, you get:\n\n2 * 2 = 4 \n",
+      "content": "5 + 5 = 10 \n",
       "additional_kwargs": {},
       "type": "ai",
       "example": false
