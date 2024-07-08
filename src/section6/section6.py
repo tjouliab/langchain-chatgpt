@@ -32,7 +32,11 @@ if __name__ == "__main__":
     prompt = ChatPromptTemplate(
         messages=[
             SystemMessage(
-                content=f"You are an AI that has access to a SQLite database with tables:'\n'{tables}"
+                content=(
+                    "You are an AI that has access to a SQLite database with tables.\n"
+                    f"The database has tables of: {tables}\n"
+                    "Do not make any assumptions about what tables exist or what columns exist. Instead, use the 'describe_tables' function."
+                )
             ),
             HumanMessagePromptTemplate.from_template(template="{input}"),
             MessagesPlaceholder(variable_name="agent_scratchpad"),
@@ -40,11 +44,11 @@ if __name__ == "__main__":
     )
 
     # Get the list of tools the agent can use
-    tools = [sql.run_query_tool]
+    tools = [sql.run_query_tool, sql.describte_tables_tool]
 
     # An agent is like a chain that can use tools
     agent = OpenAIFunctionsAgent(llm=model, prompt=prompt, tools=tools)
     agent_executor = AgentExecutor(agent=agent, verbose=True, tools=tools)
 
-    # agent_executor("How many users have their shipping address registered ?")
-    agent_executor("What is the name of the user with the longest email adress ?")
+    agent_executor("How many users have their shipping address registered ?")
+    # agent_executor("What is the name of the user with the longest email adress ?")

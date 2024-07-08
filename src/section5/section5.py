@@ -13,8 +13,8 @@ from langchain.chains import RetrievalQA
 from langchain.schema import BaseRetriever
 from langchain.globals import set_debug, set_verbose
 
-# set_debug(True)
-# set_verbose(True)
+set_debug(True)
+set_verbose(True)
 
 
 # Custom retriever that filters redundant entries
@@ -50,5 +50,5 @@ if __name__ == "__main__":
         llm=model, retriever=retriever, chain_type="map_reduce"
     )
 
-    result = chain.run("What is an interesting fact about a famous scientist ?")
+    result = chain.run("Give me all the facts you know about famous scientists")
     print(result)
